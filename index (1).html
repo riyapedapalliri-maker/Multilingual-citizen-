@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Citizen Governance Portal</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.95)),
+url("https://images.unsplash.com/photo-1526401485004-46910ecc8e51");
+
+background-size:cover;
+background-position:center;
+}
+
+/* MAIN BOX */
+
+.container{
+width:1200px;
+height:650px;
+background:white;
+border-radius:20px;
+display:flex;
+overflow:hidden;
+box-shadow:0 25px 70px rgba(0,0,0,.15);
+}
+
+/* LEFT PANEL */
+
+.left{
+flex:1;
+background:linear-gradient(135deg,#22c1c3,#4facfe);
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:60px;
+text-align:center;
+}
+
+.left h1{
+font-size:40px;
+margin-bottom:15px;
+}
+
+.left p{
+font-size:16px;
+line-height:1.6;
+max-width:420px;
+}
+
+/* RIGHT PANEL */
+
+.right{
+flex:1;
+padding:70px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+/* FORMS */
+
+.form{
+display:none;
+}
+
+.form.active{
+display:block;
+}
+
+input,select{
+width:100%;
+padding:14px;
+margin:10px 0;
+border-radius:6px;
+border:1px solid #ddd;
+}
+
+button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:6px;
+background:#22c1c3;
+color:white;
+font-size:15px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1aa7a9;
+}
+
+.switch{
+margin-top:10px;
+font-size:14px;
+}
+
+.switch span{
+color:#22c1c3;
+cursor:pointer;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+<div class="left">
+
+<h1>Citizen Governance Portal</h1>
+
+<p>
+Report civic issues such as road damage, garbage problems,
+water supply issues or electricity failures.
+Track complaints and help improve your city.
+</p>
+
+</div>
+
+
+<div class="right">
+
+<select onchange="changeUser(this.value)">
+
+<option value="citizen">Citizen Portal</option>
+<option value="admin">Government Admin</option>
+
+</select>
+
+
+<!-- Citizen Login -->
+
+<div id="citizenLogin" class="form active">
+
+<form action="citizen_login.php" method="POST">
+
+<h2>Citizen Login</h2>
+
+<input name="email" placeholder="Email">
+
+<input type="password" name="password" placeholder="Password">
+
+<button type="submit">Login</button>
+
+</form>
+
+</div>
+
+
+<!-- Citizen Register -->
+
+<div id="citizenRegister" class="form">
+
+<form action="citizen_register.php" method="POST">
+
+<h2>Citizen Register</h2>
+
+<input name="name" placeholder="Full Name">
+<input name="city" placeholder="City">
+<input name="phone" placeholder="Phone">
+<input name="email" placeholder="Email">
+<input type="password" name="password" placeholder="Password">
+
+<button type="submit">Register</button>
+
+</form>
+
+</div>
+
+
+<!-- Admin Login -->
+
+<div id="adminLogin" class="form">
+
+<form action="admin_login.php" method="POST">
+
+<h2>Admin Login</h2>
+
+<input name="email" placeholder="Admin Email">
+
+<input type="password" name="password" placeholder="Password">
+
+<button type="submit">Login</button>
+
+</form>
+
+</div>
+
+<h2>Admin Login</h2>
+
+<input placeholder="Admin ID">
+<input type="password" placeholder="Password">
+
+<button onclick="adminLogin()">Login</button>
+
+<div class="switch">
+New Admin? <span onclick="showAdminRegister()">Register</span>
+</div>
+
+</div>
+
+
+<!-- Admin Register -->
+
+<div id="adminRegister" class="form">
+
+<form action="admin_register.php" method="POST">
+
+<h2>Admin Register</h2>
+
+<input name="admin_name" placeholder="Admin Name">
+
+<input name="department" placeholder="Department">
+
+<input name="district" placeholder="Area / District">
+
+<input name="email" placeholder="Email">
+
+<input type="password" name="password" placeholder="Password">
+
+<button type="submit">Register</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function hideAll(){
+document.querySelectorAll(".form").forEach(f=>f.classList.remove("active"))
+}
+
+function changeUser(type){
+
+hideAll()
+
+if(type=="citizen"){
+document.getElementById("citizenLogin").classList.add("active")
+}
+else{
+document.getElementById("adminLogin").classList.add("active")
+}
+
+}
+
+function showCitizenRegister(){
+hideAll()
+document.getElementById("citizenRegister").classList.add("active")
+}
+
+function showAdminRegister(){
+hideAll()
+document.getElementById("adminRegister").classList.add("active")
+}
+
+
+
+</script>
+
+</body>
+</html>

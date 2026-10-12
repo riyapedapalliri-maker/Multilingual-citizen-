@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Complaint Portal</title>
+
+<style>
+
+body{
+font-family:Segoe UI;
+margin:0;
+background:#f8fafc;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 60px;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#2563eb;
+}
+
+.menu a{
+margin-left:25px;
+text-decoration:none;
+color:#555;
+font-size:15px;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:80px 20px;
+background:linear-gradient(#e0f2fe,#f8fafc);
+}
+
+.hero h1{
+font-size:38px;
+color:#2563eb;
+}
+
+.hero p{
+margin-top:10px;
+color:#555;
+}
+
+.buttons{
+margin-top:30px;
+}
+
+.btn{
+padding:12px 25px;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+margin:10px;
+}
+
+.submit{
+background:#3b82f6;
+color:white;
+}
+
+.track{
+background:#10b981;
+color:white;
+}
+
+/* FEATURES */
+
+.features{
+padding:70px 60px;
+text-align:center;
+}
+
+.cards{
+display:flex;
+gap:30px;
+justify-content:center;
+margin-top:40px;
+}
+
+.card{
+background:white;
+padding:30px;
+width:280px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.card h3{
+color:#2563eb;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">Complaint Portal</div>
+
+<div class="menu">
+<a href="user-dashboard.html">Home</a>
+<a href="submit-complaint.html">Submit Complaint</a>
+<a href="track.php">Track Complaint</a>
+</div>
+
+</div>
+
+<div class="hero">
+
+<h1>Digital Complaint Management System</h1>
+
+<p>Submit complaints and track their resolution easily.</p>
+
+<div class="buttons">
+
+<button class="btn submit" onclick="location.href='submit-complaint.html'">
+Submit Complaint
+</button>
+
+<button class="btn track" onclick="location.href='track.php'">
+Track Complaint
+</button>
+
+</div>
+
+</div>
+
+<div class="features">
+
+<h2>How Our Platform Helps Citizens</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Easy Complaint Submission</h3>
+<p>Submit complaints online quickly.</p>
+</div>
+
+<div class="card">
+<h3>Real-Time Tracking</h3>
+<p>Track complaint status anytime.</p>
+</div>
+
+<div class="card">
+<h3>Transparent Response</h3>
+<p>Government responses are visible.</p>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

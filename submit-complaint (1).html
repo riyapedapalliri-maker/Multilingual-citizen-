@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Submit Complaint</title>
+
+<style>
+
+body{
+font-family:Segoe UI;
+margin:0;
+background:#f1f5f9;
+}
+
+.container{
+width:500px;
+margin:60px auto;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+h2{
+text-align:center;
+color:#2563eb;
+}
+
+input,select,textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:6px;
+border:1px solid #ddd;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#3b82f6;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+.voice{
+background:#10b981;
+margin-top:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Submit Complaint</h2>
+
+<form action="submit_complaint.php" method="POST">
+
+<input name="name" placeholder="Your Name">
+
+<input name="area" placeholder="Area / City">
+
+<select name="category">
+<option>Road Issue</option>
+<option>Water Supply</option>
+<option>Garbage</option>
+<option>Electricity</option>
+</select>
+
+<select name="language">
+<option value="en">English</option>
+<option value="hi">Hindi</option>
+<option value="mr">Marathi</option>
+<option value="ta">Tamil</option>
+</select>
+
+<textarea name="complaint" id="complaint" rows="4" placeholder="Describe your problem"></textarea>
+<button type="button" class="voice" onclick="startVoice()">🎤 Speak Complaint</button>
+<button type="submit">Submit Complaint</button>
+
+</form>
+
+</div>
+
+<script>
+
+function submitComplaint(){
+alert("Complaint submitted successfully!")
+}
+
+/* voice typing */
+
+function startVoice(){
+
+var recognition = new webkitSpeechRecognition()
+
+recognition.lang = "en-IN"
+
+recognition.onresult = function(event){
+
+document.getElementById("complaint").value =
+event.results[0][0].transcript
+
+}
+
+recognition.start()
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Dashboard</title>
+
+<style>
+
+body{
+font-family:Segoe UI;
+margin:0;
+background:#ecfeff;
+}
+
+.header{
+background:#22c1c3;
+color:white;
+padding:20px;
+font-size:22px;
+}
+
+.container{
+padding:40px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+textarea{
+width:100%;
+height:90px;
+margin-top:10px;
+padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+margin-top:10px;
+padding:10px 15px;
+background:#22c1c3;
+border:none;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+Government Complaint Dashboard
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h3>Complaint: Road Damage</h3>
+
+<p>Area: Ward A</p>
+
+<p>Description: Large pothole causing traffic problems.</p>
+
+<textarea placeholder="Write status update for citizen"></textarea>
+
+<button onclick="respond()">Send Response</button>
+
+</div>
+
+<div class="card">
+
+<h3>Complaint: Garbage Issue</h3>
+
+<p>Area: Ward B</p>
+
+<p>Description: Garbage not collected for several days.</p>
+
+<textarea placeholder="Write status update for citizen"></textarea>
+
+<button onclick="respond()">Send Response</button>
+
+</div>
+
+</div>
+
+<script>
+
+function respond(){
+alert("Response sent successfully")
+}
+
+</script>
+
+</body>
+</html>
